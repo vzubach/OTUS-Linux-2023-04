@@ -9,7 +9,7 @@ MACHINES = {
               #Указываем количество ядер ВМ
               :cpus => 2,
               #Указываем количество ОЗУ в мегабайтах
-              :memory => 1024,
+              :memory => 2048,
             }
 }
 Vagrant.configure("2") do |config|
@@ -34,7 +34,7 @@ config.vm.provision "shell", inline: <<-SHELL
      echo sudo grub2-mkconfig -o /boot/grub2/grub.cfg
      sudo grub2-set-default 0
      echo sudo grub2-set-default 0
-     echo sudo reboot
+     echo Rebooting...
      sudo reboot
   SHELL
 end
